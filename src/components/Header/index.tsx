@@ -1,24 +1,19 @@
 import React from "react";
 
-import LogoSvg from "../../assets/svg/logo.svg";
+import { Container } from "./styles";
 
-import {
-  Container,
-  Content,
-  TitleContainer,
-  Title,
-  Description,
-} from "./styles";
+interface HeaderProps {
+  title: string;
+}
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <Container>
-      <Content>
-        <TitleContainer>
-          <Title>GoCity</Title>
-          <Description>Os melhores comércios da sua cidade</Description>
-        </TitleContainer>
-      </Content>
+      {/* <Button></Button>
+
+      <Title>{title}</Title>
+
+      <Content></Content> */}
     </Container>
   );
 };
