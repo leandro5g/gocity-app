@@ -1,23 +1,38 @@
 import React from "react";
+import { TouchableOpacityProps } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { useTheme } from "styled-components";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { Container, Content, ContentIcon, TextButton } from "./styles";
+import { Container, Content, ContentIcon, TextButton, Loading } from "./styles";
 
-interface ButtonPrimaryProps {
+interface ButtonPrimaryProps extends TouchableOpacityProps {
   textButton: string;
   icon: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
+  isLoading?: boolean;
 }
 
-const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({ textButton, icon }) => {
+const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
+  textButton,
+  icon,
+  isLoading,
+  ...rest
+}) => {
   const { colors } = useTheme();
 
   return (
-    <Container activeOpacity={0.9}>
+    <Container disabled={isLoading} activeOpacity={0.9} {...rest}>
       <Content>
-        <TextButton>{textButton}</TextButton>
+        {!isLoading && <TextButton>{textButton}</TextButton>}
+
+        {isLoading && (
+          <Loading
+            color={colors.primaryDark}
+            animating={isLoading}
+            size="small"
+          />
+        )}
       </Content>
 
       <ContentIcon>

@@ -10,26 +10,22 @@ export const Container = styled.View`
 
 export const Content = styled.View`
   justify-content: center;
-  margin: ${RFPercentage(10)}px 0px;
+  margin-bottom: ${RFPercentage(4)}px;
 `;
 
 export const Description = styled.Text`
-  font-size: ${({ theme }) => theme.metrics.RFValue(15)}px;
-  line-height: ${({ theme }) => theme.metrics.RFValue(20)}px;
-  color: ${({ theme }) => theme.colors.shape};
-  font-family: ${({ theme }) => theme.fonts.secondary_500};
-`;
-
-export const DescriptionSpan = styled.Text`
-  font-size: ${({ theme }) => theme.metrics.RFValue(15)}px;
+  font-size: ${({ theme }) => theme.metrics.RFValue(16)}px;
   line-height: ${({ theme }) => theme.metrics.RFValue(20)}px;
   color: ${({ theme }) => theme.colors.secondary};
   font-family: ${({ theme }) => theme.fonts.secondary_500};
+  margin-left: ${RFValue(7)}px;
 `;
 
 export const ContentDescription = styled.View`
-  flex-direction: row;
   align-items: center;
-  margin-top: ${RFValue(20)}px;
-  align-self: center;
+  flex-direction: row;
+`;
+
+export const ButtonBack = styled.TouchableOpacity`
+  margin: ${RFPercentage(4)}px 0px;
 `;

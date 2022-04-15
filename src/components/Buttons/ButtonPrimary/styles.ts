@@ -31,3 +31,5 @@ export const ContentIcon = styled.View`
   justify-content: center;
   align-items: center;
 `;
+
+export const Loading = styled.ActivityIndicator``;

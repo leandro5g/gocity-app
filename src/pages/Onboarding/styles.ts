@@ -14,10 +14,3 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.shape};
   font-family: ${({ theme }) => theme.fonts.primary_600};
 `;
-
-export const Header = styled.Text`
-  font-size: ${({ theme }) => theme.metrics.RFValue(40)}px;
-  line-height: ${RFValue(50)}px;
-  color: ${({ theme }) => theme.colors.shape};
-  font-family: ${({ theme }) => theme.fonts.primary_600};
-`;
